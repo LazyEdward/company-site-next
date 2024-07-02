@@ -6,7 +6,6 @@
 describe('Test TopBar Navigation', () => {
 	before(() => {
 		cy.visit('/')
-		cy.wait('5000')
 	})
 	
 	describe('Desktop', () => {
@@ -14,7 +13,7 @@ describe('Test TopBar Navigation', () => {
 			cy.viewport(1920, 1080)
 		})
 
-		it('Test TopBar Link exist', () => {
+		it('Test TopBar Link exist', { defaultCommandTimeout: 10000 }, () => {
 			cy.get('img[alt="Company Logo Top"]').should('be.exist')
 			cy.get('img[alt="Company Logo Footer"]').should('be.exist')
 			cy.contains('a', 'How to start').should('be.visible')
