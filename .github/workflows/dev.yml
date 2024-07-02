@@ -18,14 +18,14 @@ jobs:
       - name: E2E on Chrome
         uses: cypress-io/github-action@v6
         with:
-          start: 'npm run dev'
+          start: 'npm run dev -p 3001'
           wait-on: 'http://localhost:3001'
           config: baseUrl=http://localhost:3001
           browser: chrome
       - name: E2E on Edge
         uses: cypress-io/github-action@v6
         with:
-          start: 'npm run dev'
+          start: 'npm run dev -p 3000'
           wait-on: 'http://localhost:3000'
           config: baseUrl=http://localhost:3000
           browser: edge
