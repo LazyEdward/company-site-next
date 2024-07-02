@@ -28,7 +28,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: 'npm run dev'
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:3001'
           browser: edge
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
