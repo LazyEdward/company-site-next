@@ -25,7 +25,7 @@ const TopBar = () => {
   }, [currentPath])
 
   return (
-    <main className="w-full px-4 py-[1px] lg:px-0 h-[81px] lg:h-[93px] flex justify-between lg:justify-around items-center">
+    <main className="w-full px-4 py-[1px] h-[81px] lg:h-[93px] flex justify-between lg:justify-around items-center">
       <NavLink link="/">
         <Image width={141} height={59} className="w-[141px] h-[59px] lg:w-[195px] lg:h-[83px]" src="/logo.png" alt="Company Logo"/>
       </NavLink>
@@ -73,6 +73,11 @@ const TopBar = () => {
                 <ArrowForward/>
               </RoundButton>
             </div>
+          </div>
+          <div className="flex justify-center w-full">
+            <NavLink activeClassName={NAV_LINK_STYLE.active} link="/contact-us">
+              <span className="truncate">Contact Us</span>
+            </NavLink>
           </div>
         </section>
       </Modal>

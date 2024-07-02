@@ -91,7 +91,7 @@ Colombo 01`}
           </div>
         </section>
       </main>
-      <span className="truncate text-lg px-5 py-8">
+      <span className="truncate text-lg px-5 lg:px-16 py-8">
         © 2022 courtney
       </span>
     </main>
