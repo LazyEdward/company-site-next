@@ -13,7 +13,7 @@ const PageHeader = ({
 }) => (
 	<div className="relative flex justify-center items-center w-full h-[407px]">
 		<div className="absolute top-0 left-0 w-full h-full">
-			<Image fill objectFit="cover" src="/page_default.png" alt="Page Default"/>
+			<Image className="w-full h-full object-cover" width={1920} height={407} src="/page_default.png" alt="Page Default"/>
 		</div>
 		<div className="flex flex-col px-5 max-w-[80%] lg:max-w-[40%] items-center text-center text-white z-[2]">
 			<span className=" font-semibold text-[64px]">{PAGE_HEADERS[pathName].title}</span>
