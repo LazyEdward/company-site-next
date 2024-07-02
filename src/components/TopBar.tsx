@@ -53,7 +53,7 @@ const TopBar = () => {
         id="portal-body"
         active={showMobileNavLinks}
       >
-        <section className="absolute top-0 left-0 w-full h-full py-6 px-6 flex gap-8 flex-col overflow-auto bg-white">
+        <section className="absolute z-10 top-0 left-0 w-full h-full py-6 px-6 flex gap-8 flex-col overflow-auto bg-white">
           <div className="flex justify-end">
             <Close className="cursor-pointer" onClick={() => setShowMobileNavLinks(false)}/>
           </div>
