@@ -5,7 +5,7 @@
 
 const NotExist = () => {
   return (
-    <main className="flex flex-col">Page Not Exist</main>
+    <main className=" text-2xl flex flex-col ">Page Not Exist</main>
   );
 }
 

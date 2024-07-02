@@ -22,4 +22,7 @@ describe('Test Landing Pages', () => {
 	it('Test Technologies Page', () => {
 		cy.visit('/technologies')
 	})
+	it('Not exist page', () => {
+		cy.visit('/somethings')
+	})
 })
