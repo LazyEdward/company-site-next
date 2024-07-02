@@ -23,6 +23,7 @@ describe('Test Landing Pages', () => {
 		cy.visit('/technologies')
 	})
 	it('Not exist page', () => {
-		cy.visit('/somethings')
+		cy.request({url: '/somethings', failOnStatusCode: false}).its('status').should('equal', 404)
+		cy.visit('/somethings', {failOnStatusCode: false})
 	})
 })

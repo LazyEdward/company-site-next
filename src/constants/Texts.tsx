@@ -24,6 +24,10 @@ export const PAGE_HEADERS = {
 		title: "Contact Us",
 		descriptions: "We specialize in helping you build a team of expert developers.",
 	},
+	"/not-exist": {
+		title: "404",
+		descriptions: "Page Not Found",
+	},
 } as const
 
 export type TPageHeader = keyof typeof PAGE_HEADERS

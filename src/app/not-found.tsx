@@ -3,9 +3,14 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+import PageHeader from "@/components/PageHeader";
+
 const NotExist = () => {
   return (
-    <main className=" text-2xl flex flex-col ">Page Not Exist</main>
+    <main className="flex flex-col">
+      <PageHeader pathName="/not-exist" />
+      <div className="h-[68px] lg:h-[200px]"></div>
+    </main>
   );
 }
 

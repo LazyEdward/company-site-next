@@ -18,7 +18,7 @@ const Footer = () => {
       <main className="w-full flex flex-col px-5 pt-[30px] lg:px-0 lg:flex-row lg:justify-around border-y-[1px] border-[#C4C4C4]">
         <section className="flex flex-col gap-8 pb-8">
           <NavLink link="/">
-            <Image width={195} height={83} src="/logo.png" alt="Company Logo"/>
+            <Image width={195} height={83} src="/logo.png" alt="Company Logo Footer"/>
           </NavLink>
           <span className=" whitespace-pre-wrap">
             {`Expertly trained, battle-tested, elite
