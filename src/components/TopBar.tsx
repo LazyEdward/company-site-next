@@ -30,7 +30,7 @@ const TopBar = () => {
         <Image width={141} height={59} className="w-[141px] h-[59px] lg:w-[195px] lg:h-[83px]" src="/logo.png" alt="Company Logo"/>
       </NavLink>
       <Menu className="block lg:hidden cursor-pointer" onClick={() => setShowMobileNavLinks(true)}/>
-      <div className="hidden lg:flex gap-8">
+      <div className="hidden lg:flex justify-between gap-6">
         {TOP_BAR_LINKS.map(item => (
           <NavLink key={item.link} activeClassName={NAV_LINK_STYLE.active} link={item.link}>
             <div className="flex items-center gap-[1px]">

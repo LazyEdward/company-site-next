@@ -1,0 +1,16 @@
+# Copyright (c) 2024 LazyEdward
+# 
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+name: Edge
+on: push
+jobs:
+  edge:
+    runs-on: ubuntu-22.04
+    name: E2E on Edge
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        with:
+          browser: edge
