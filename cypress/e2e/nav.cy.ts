@@ -6,6 +6,7 @@
 describe('Test TopBar Navigation', () => {
 	before(() => {
 		cy.visit('/')
+		cy.wait('5000')
 	})
 	
 	describe('Desktop', () => {
