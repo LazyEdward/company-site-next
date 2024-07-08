@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import { DragEvent, useState } from "react";
+import { DragEvent, PointerEvent, TouchEvent, UIEvent, useState, WheelEvent } from "react";
 
 export type TSwipeControl = {
 	minimalOffset?: number,
@@ -31,13 +31,12 @@ const Swipeable = ({
 			setStartPos(-1)
 		}
 	}
-	
-	const handleDragStart = (e: DragEvent<HTMLDivElement>) => {
+
+	const handlePointerStart = (e: PointerEvent<HTMLDivElement>) => {
 		setStartPos(orientation === 'VERTICAL' ? e.clientY : e.clientX)
   };
 
-	const handleDrag = (e: DragEvent<HTMLDivElement>) => {
-
+	const handlePointerMove = (e: PointerEvent<HTMLDivElement>) => {
 		if(startPos !== -1){
 			switch(orientation){
 				case "HORIZONTAL":
@@ -53,12 +52,10 @@ const Swipeable = ({
 
 	return (
 		<div
-			tabIndex={1}
-			draggable
-			className="z-[2] absolute top-0 left-0 w-full h-full select-none"
-			onDragStart={handleDragStart}
-			onDrag={handleDrag}
-			onDragEnd={() => setStartPos(-1)}
+			className="z-[2] absolute top-0 left-0 w-full h-full touch-none select-none"
+			onPointerDown={handlePointerStart}
+			onPointerMove={handlePointerMove}
+			onPointerUp={() => setStartPos(-1)}
 		/>
 	)
 }

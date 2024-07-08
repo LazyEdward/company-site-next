@@ -15,7 +15,7 @@ const Home = () => (
     <section className="w-full flex justify-center items-center h-[216px] lg:h-[721px] lg:px-16 overflow-x-auto">
       <section className="relative w-full h-full lg:min-w-[1200px] lg:max-w-[1700px] flex justify-end items-center overflow-hidden">
         <div className="relative w-[999px] h-full flex justify-end max-w-full lg:max-w-[999px]">
-          <Image className="max-w-full lg:max-w-[999px] rounded-bl-[100px] " fill objectFit="cover" src="/home.png" alt="Page Default"/>
+          <Image width={999} height={721} className="object-cover max-w-full lg:max-w-[999px] rounded-bl-[100px] " src="/home.png" alt="Page Default"/>
         </div>
         <div className="hidden lg:flex items-center absolute top-0 left-20 w-full h-full">
           <div className="flex flex-col justify-center gap-5 bg-white rounded-tr-[100px] max-w-[730px] h-[584px] pl-2 pr-[113px] py-[250px] z-[2]">
