@@ -27,10 +27,10 @@ const TopBar = () => {
   return (
     <main className="w-full px-4 py-[1px] h-[81px] lg:h-[93px] flex justify-between lg:justify-around items-center">
       <NavLink link="/">
-        <Image width={141} height={59} className="w-[141px] h-[59px] lg:w-[195px] lg:h-[83px]" src="/logo.png" alt="Company Logo Top"/>
+        <Image data-cy="header-nav-image" width={141} height={59} className="w-[141px] h-[59px] lg:w-[195px] lg:h-[83px]" src="/logo.png" alt="Company Logo Top"/>
       </NavLink>
       <Menu className="block lg:hidden cursor-pointer" onClick={() => setShowMobileNavLinks(true)}/>
-      <div className="hidden lg:flex justify-between gap-6">
+      <div data-cy="desktop-links" className="hidden lg:flex justify-between gap-6">
         {TOP_BAR_LINKS.map(item => (
           <NavLink key={item.link} activeClassName={NAV_LINK_STYLE.active} link={item.link}>
             <div className="flex items-center gap-[1px]">
@@ -40,7 +40,7 @@ const TopBar = () => {
           </NavLink>
         ))}
       </div>
-      <div className="hidden lg:flex lf:flex-1 items-center gap-4">
+      <div className="hidden lg:flex items-center gap-4">
         <RoundButton placeholder="BUILD A TEAM" className={`px-4 ${ROUND_BUTTON_STYLE.frame}`}>
           <span className="pr-1">BUILD A TEAM</span>
           <ArrowForward/>
@@ -53,7 +53,7 @@ const TopBar = () => {
         id="portal-body"
         active={showMobileNavLinks}
       >
-        <section className="absolute z-10 top-0 left-0 w-full h-full py-6 px-6 flex gap-8 flex-col overflow-auto bg-white">
+        <section data-cy="mobile-links" className="absolute z-10 top-0 left-0 w-full h-full py-6 px-6 flex gap-8 flex-col overflow-auto bg-white">
           <div className="flex justify-end">
             <Close className="cursor-pointer" onClick={() => setShowMobileNavLinks(false)}/>
           </div>

@@ -4,23 +4,165 @@
 // https://opensource.org/licenses/MIT
 
 describe('Test TopBar Navigation', () => {
-	before(() => {
+	beforeEach(() => {
 		cy.visit('/')
 	})
 	
 	describe('Desktop', () => {
-		before(() => {
+		beforeEach(() => {
 			cy.viewport(1920, 1080)
+			// cy.viewport(350, 700)
 		})
 
-		it('Test TopBar Link exist', { defaultCommandTimeout: 10000 }, () => {
-			cy.get('img[alt="Company Logo Top"]').should('be.exist')
-			cy.get('img[alt="Company Logo Footer"]').should('be.exist')
-			cy.contains('a', 'How to start').should('be.visible')
-			cy.contains('a', 'Services').should('be.visible')
-			cy.contains('a', 'Technologies').should('be.visible')
-			cy.contains('a', 'Careers').should('be.visible')
-			cy.contains('a', 'Contact Us').should('be.visible')
+		it('Test TopBar Link exist', () => {
+			cy.get('[data-cy="header-nav-image"]').should('be.visible')
+			cy.get('[data-cy="footer-nav-image"]').scrollIntoView().should('be.visible')
+			const desktopLinks = cy.get('[data-cy="desktop-links"]')
+
+			desktopLinks.should('be.visible')
+			desktopLinks.children().should('have.length', 4)
+
+			desktopLinks
+				.children()
+				.should('contain', 'How to start').should('be.visible')
+				.and('contain', 'Services').should('be.visible')
+				.and('contain', 'Technologies').should('be.visible')
+				.and('contain', 'Careers').should('be.visible')
+
+			cy.contains('span', 'Contact Us').should('be.visible')
+		})
+
+		it('Test TopBar Link nav', () => {
+			const desktopLinks = cy.get('[data-cy="desktop-links"]').children()
+
+			desktopLinks.then(() => {
+				desktopLinks.contains('How to start').should('be.visible').click().then(() => {
+					cy.url().should('include', '/get-started')
+				})
+	
+				cy.wait(500)
+	
+				desktopLinks.contains('Services').should('be.visible').click().then(() => {
+					cy.url().should('include', '/services')
+				})
+	
+				cy.wait(500)
+	
+				desktopLinks.contains('Technologies').should('be.visible').click().then(() => {
+					cy.url().should('include', '/technologies')
+				})
+
+				cy.wait(500)
+	
+				desktopLinks.contains('Careers').should('be.visible').click().then(() => {
+					cy.url().should('include', '/careers')
+				})
+
+				cy.wait(500)
+
+				cy.get('[data-cy="header-nav-image"]').should('be.visible').should('be.visible').click().then(() => {
+					cy.url().should('include', '/')
+				})
+
+				cy.wait(500)
+
+				cy.contains('span', 'Contact Us').should('be.visible').click().then(() => {
+					cy.url().should('include', '/contact-us')
+				})
+
+				cy.wait(500)
+
+				cy.get('[data-cy="footer-nav-image"]').scrollIntoView().should('be.visible').should('be.visible').click().then(() => {
+					cy.url().should('include', '/')
+				})
+			})
+
+
+		})
+
+	})
+	
+	describe('Mobile', () => {
+		beforeEach(() => {
+			cy.viewport(350, 700)
+		})
+
+		it('Test TopBar Link exist', () => {
+			cy.get('[data-cy="header-nav-image"]').should('be.visible')
+			cy.get('[data-cy="footer-nav-image"]').scrollIntoView().should('be.visible')
+
+			cy.contains('span', 'Contact Us').should('not.be.visible')
+			cy.wait(500)
+			
+			const menu = cy.get('[role="menu"]')
+			menu.should('be.visible')
+
+			menu.click().then(() => {
+				const mobileLinks = cy.get('[data-cy="mobile-links"]')
+				mobileLinks.should('be.visible')
+	
+				mobileLinks
+					.children()
+					.should('contain', 'How to start').should('be.visible')
+					.and('contain', 'Services').should('be.visible')
+					.and('contain', 'Technologies').should('be.visible')
+					.and('contain', 'Careers').should('be.visible')
+					.and('contain', 'Contact Us').should('be.visible')
+
+			})
+		})
+
+		it('Test TopBar Link nav', () => {
+			cy.get('[role="menu"]').click().then(() => {
+				cy.get('[data-cy="mobile-links"]').children().contains('How to start').should('be.visible').click().then(() => {
+					cy.url().should('include', '/get-started')
+				})
+			})
+
+			cy.wait(500)
+
+			cy.get('[role="menu"]').click().then(() => {
+				cy.get('[data-cy="mobile-links"]').children().contains('Services').should('be.visible').click().then(() => {
+					cy.url().should('include', '/services')
+				})
+			})
+
+			cy.wait(500)
+
+			cy.get('[role="menu"]').click().then(() => {
+				cy.get('[data-cy="mobile-links"]').children().contains('Technologies').should('be.visible').click().then(() => {
+					cy.url().should('include', '/technologies')
+				})
+			})
+
+			cy.wait(500)
+
+			cy.get('[role="menu"]').click().then(() => {
+				cy.get('[data-cy="mobile-links"]').children().contains('Careers').should('be.visible').click().then(() => {
+					cy.url().should('include', '/careers')
+				})
+			})
+
+			cy.wait(500)
+
+			cy.get('[data-cy="header-nav-image"]').should('be.visible').should('be.visible').click().then(() => {
+				cy.url().should('include', '/')
+			})
+
+			cy.wait(500)
+
+			cy.get('[role="menu"]').click().then(() => {
+				cy.get('[data-cy="mobile-links"]').children().contains('Contact Us').should('be.visible').click().then(() => {
+					cy.url().should('include', '/contact-us')
+				})
+			})
+
+			cy.wait(500)
+
+			cy.get('[data-cy="footer-nav-image"]').scrollIntoView().should('be.visible').should('be.visible').click().then(() => {
+				cy.url().should('include', '/')
+			})
+
 		})
 
 	})

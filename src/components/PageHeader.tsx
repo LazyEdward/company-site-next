@@ -16,7 +16,7 @@ const PageHeader = ({
 			<Image className="w-full h-full object-cover" width={1920} height={407} src="/page_default.png" alt="Page Default"/>
 		</div>
 		<div className="flex flex-col px-5 max-w-[80%] lg:max-w-[40%] items-center text-center text-white z-[2]">
-			<span className=" font-semibold text-[64px]">{PAGE_HEADERS[pathName].title}</span>
+			<span className=" font-semibold text-[48px] lg:text-[64px]">{PAGE_HEADERS[pathName].title}</span>
 			<span className="text-lg">{PAGE_HEADERS[pathName].descriptions}</span>
 		</div>
 	</div>
