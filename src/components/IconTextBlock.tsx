@@ -4,7 +4,6 @@
 // https://opensource.org/licenses/MIT
 
 import Image from "next/image"
-import { ComponentType } from "react"
 
 export type TIconTextBlock = {
 	imageIcon: string,
