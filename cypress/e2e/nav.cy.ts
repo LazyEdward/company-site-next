@@ -60,7 +60,7 @@ describe('Test TopBar Navigation', () => {
 
 				cy.wait(500)
 
-				cy.get('[data-cy="header-nav-image"]').should('be.visible').should('be.visible').click().then(() => {
+				cy.get('[data-cy="header-nav-image"]').should('be.visible').click().then(() => {
 					cy.url().should('include', '/')
 				})
 
@@ -72,7 +72,7 @@ describe('Test TopBar Navigation', () => {
 
 				cy.wait(500)
 
-				cy.get('[data-cy="footer-nav-image"]').scrollIntoView().should('be.visible').should('be.visible').click().then(() => {
+				cy.get('[data-cy="footer-nav-image"]').scrollIntoView().should('be.visible').click().then(() => {
 					cy.url().should('include', '/')
 				})
 			})
@@ -112,54 +112,54 @@ describe('Test TopBar Navigation', () => {
 			})
 		})
 
-		it('Test TopBar Link nav', { defaultCommandTimeout: 10000 }, () => {
-			cy.get('[role="menu"]').click().then(() => {
+		it('Test TopBar Link nav', () => {
+			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.get('[data-cy="mobile-links"]').children().contains('How to start').should('be.visible').click().then(() => {
 					cy.url().should('include', '/get-started')
 				})
 			})
 
-			cy.wait(500)
+			cy.wait(700)
 
-			cy.get('[role="menu"]').click().then(() => {
+			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.get('[data-cy="mobile-links"]').children().contains('Services').should('be.visible').click().then(() => {
 					cy.url().should('include', '/services')
 				})
 			})
 
-			cy.wait(500)
+			cy.wait(700)
 
-			cy.get('[role="menu"]').click().then(() => {
+			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.get('[data-cy="mobile-links"]').children().contains('Technologies').should('be.visible').click().then(() => {
 					cy.url().should('include', '/technologies')
 				})
 			})
 
-			cy.wait(500)
+			cy.wait(700)
 
-			cy.get('[role="menu"]').click().then(() => {
+			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.get('[data-cy="mobile-links"]').children().contains('Careers').should('be.visible').click().then(() => {
 					cy.url().should('include', '/careers')
 				})
 			})
 
-			cy.wait(500)
+			cy.wait(700)
 
 			cy.get('[data-cy="header-nav-image"]').should('be.visible').should('be.visible').click().then(() => {
 				cy.url().should('include', '/')
 			})
 
-			cy.wait(500)
+			cy.wait(700)
 
-			cy.get('[role="menu"]').click().then(() => {
+			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.get('[data-cy="mobile-links"]').children().contains('Contact Us').should('be.visible').click().then(() => {
 					cy.url().should('include', '/contact-us')
 				})
 			})
 
-			cy.wait(500)
+			cy.wait(700)
 
-			cy.get('[data-cy="footer-nav-image"]').scrollIntoView().should('be.visible').should('be.visible').click().then(() => {
+			cy.get('[data-cy="footer-nav-image"]').scrollIntoView().should('be.visible').click().then(() => {
 				cy.url().should('include', '/')
 			})
 
