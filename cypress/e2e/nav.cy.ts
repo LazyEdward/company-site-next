@@ -115,6 +115,8 @@ describe('Test TopBar Navigation', () => {
 				})
 			})
 
+			cy.wait(500)
+
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.wait(500)
 				cy.get('[data-cy="mobile-links"]').children().contains('Services').should('be.visible').click().then(() => {
@@ -122,12 +124,16 @@ describe('Test TopBar Navigation', () => {
 				})
 			})
 
+			cy.wait(500)
+
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.wait(500)
 				cy.get('[data-cy="mobile-links"]').children().contains('Technologies').should('be.visible').click().then(() => {
 					cy.url().should('include', '/technologies')
 				})
 			})
+
+			cy.wait(500)
 
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.wait(500)
@@ -139,6 +145,8 @@ describe('Test TopBar Navigation', () => {
 			cy.get('[data-cy="header-nav-image"]').should('be.visible').should('be.visible').click().then(() => {
 				cy.url().should('include', '/')
 			})
+
+			cy.wait(500)
 
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.wait(500)
