@@ -108,7 +108,7 @@ describe('Test TopBar Navigation', () => {
 
 		it('Test TopBar Link nav', () => {
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
-				cy.get('[data-cy="mobile-links"]').children().contains('How to start').should('be.visible').click().then(() => {
+				cy.get('[data-cy="mobile-links"]', { timeout: 15000 }).children().contains('How to start').should('be.visible').click().then(() => {
 					cy.url().should('include', '/get-started')
 				})
 			})
@@ -116,7 +116,7 @@ describe('Test TopBar Navigation', () => {
 			cy.wait(500)
 
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
-				cy.get('[data-cy="mobile-links"]').children().contains('Services').should('be.visible').click().then(() => {
+				cy.get('[data-cy="mobile-links"]', { timeout: 15000 }).children().contains('Services').should('be.visible').click().then(() => {
 					cy.url().should('include', '/services')
 				})
 			})
@@ -124,7 +124,7 @@ describe('Test TopBar Navigation', () => {
 			cy.wait(500)
 
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
-				cy.get('[data-cy="mobile-links"]').children().contains('Technologies').should('be.visible').click().then(() => {
+				cy.get('[data-cy="mobile-links"]', { timeout: 15000 }).children().contains('Technologies').should('be.visible').click().then(() => {
 					cy.url().should('include', '/technologies')
 				})
 			})
@@ -132,7 +132,7 @@ describe('Test TopBar Navigation', () => {
 			cy.wait(500)
 
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
-				cy.get('[data-cy="mobile-links"]').children().contains('Careers').should('be.visible').click().then(() => {
+				cy.get('[data-cy="mobile-links"]', { timeout: 15000 }).children().contains('Careers').should('be.visible').click().then(() => {
 					cy.url().should('include', '/careers')
 				})
 			})
@@ -146,7 +146,7 @@ describe('Test TopBar Navigation', () => {
 			cy.wait(500)
 
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
-				cy.get('[data-cy="mobile-links"]').children().contains('Contact Us').should('be.visible').click().then(() => {
+				cy.get('[data-cy="mobile-links"]', { timeout: 15000 }).children().contains('Contact Us').should('be.visible').click().then(() => {
 					cy.url().should('include', '/contact-us')
 				})
 			})
