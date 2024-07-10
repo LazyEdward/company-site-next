@@ -92,6 +92,7 @@ describe('Test TopBar Navigation', () => {
 			menu.should('be.visible')
 
 			menu.click().then(() => {
+				cy.wait(500)
 				const mobileLinks = cy.get('[data-cy="mobile-links"]')
 				mobileLinks.should('be.visible')
 	
