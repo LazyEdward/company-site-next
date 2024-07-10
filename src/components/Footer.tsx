@@ -3,8 +3,6 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-"use client"
-
 import { FOOTER_LINKS, MEDIA_LINKS } from "@/constants/Links";
 import Image from "next/image";
 import NavLink from "./NavLink";

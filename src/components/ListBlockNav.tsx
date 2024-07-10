@@ -3,6 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+"use client"
+
 import { TCarouselControl } from "./Carousel";
 
 const ListBlockNav = ({

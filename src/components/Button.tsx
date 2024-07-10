@@ -3,6 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+"use client"
+
 import { ReactNode, MouseEvent, TouchEvent } from "react"
 
 export const ROUND_BUTTON_STYLE = {

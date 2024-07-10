@@ -1,10 +1,7 @@
-"use client"
-
 import RoundButton from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import IconTextBlock from "@/components/IconTextBlock";
 import ListBlockNav from "@/components/ListBlockNav";
-import Swipeable from "@/components/Swipeable";
 import { HOME_SOLUTIONS, HOME_START } from "@/constants/Texts";
 import ArrowForward from "@/icons/ArrowForward";
 import Image from "next/image";

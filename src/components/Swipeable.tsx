@@ -3,6 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+"use client"
+
 import { DragEvent, PointerEvent, TouchEvent, UIEvent, useState, WheelEvent } from "react";
 
 export type TSwipeControl = {

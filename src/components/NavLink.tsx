@@ -3,6 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+"use client"
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";

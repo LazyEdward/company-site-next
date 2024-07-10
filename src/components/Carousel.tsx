@@ -3,6 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+"use client"
 
 import { ComponentType } from "react"
 import { Children, ReactNode, useEffect, useState } from "react"
