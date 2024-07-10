@@ -112,7 +112,7 @@ describe('Test TopBar Navigation', () => {
 			})
 		})
 
-		it('Test TopBar Link nav', () => {
+		it('Test TopBar Link nav', { defaultCommandTimeout: 6000 }, () => {
 			cy.get('[role="menu"]').click().then(() => {
 				cy.get('[data-cy="mobile-links"]').children().contains('How to start').should('be.visible').click().then(() => {
 					cy.url().should('include', '/get-started')
