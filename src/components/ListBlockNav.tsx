@@ -16,7 +16,7 @@ const ListBlockNav = ({
 		{[...Array(itemCount)].map((_,index) => (
 			<div
 				key={index}
-				className={`${index === currentIndex ? "bg-[#9F9F9F]" : "bg-[#E1E1E1]"} cursor-pointer w-[48px] h-[7px]`}
+				className={`${index === currentIndex ? "bg-[#9F9F9F]" : "bg-[#E1E1E1]"} cursor-pointer w-[48px] h-[10px]`}
 				onClick={onSetCurrentIndex ? () => onSetCurrentIndex(index) : () => {}}
 			/>
 		))}

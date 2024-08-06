@@ -57,6 +57,149 @@ process places the foundation for a more efficient and strong business that can 
 	},
 ]
 
+export const HOME_EXPERTSES = [
+	{
+		path: "teams",
+		title: "Dedicated Teams",
+		content: `Find your next team member`,
+	},
+	{
+		path: "augmentation",
+		title: "Staff Augmentation",
+		content: `Build a distributed development team`,
+	},
+	{
+		path: "outsourcing",
+		title: "Software Outsourcing",
+		content: `End-to-End Software Development
+Outsourcing Solutions`,
+	},
+	{
+		path: "remote-office",
+		title: "Remote Office",
+		content: `Open your own remote development
+center and grow your business`,
+	},
+]
+
+export const HOME_SPECIALIZED = [
+	[
+		{
+			path: "frontend",
+			title: "Frontend Engineers",
+		},
+		{
+			path: "fullstack",
+			title: "Fullstack Engineers",
+		},
+		{
+			path: "ui-ux",
+			title: "UI/UX Engineers",
+		},
+		{
+			path: "qa",
+			title: "QA Engineers",
+		},
+		{
+			path: "designer",
+			title: "Product Designer",
+		},
+		{
+			path: "database",
+			title: "Database admin",
+		},
+	],
+	[
+		{
+			path: "angular",
+			title: "Angular Developers",
+		},
+		{
+			path: "devops",
+			title: "DevOps + DevSecOps Engineers",
+		},
+		{
+			path: "php",
+			title: "PHP Developers",
+		},
+		{
+			path: "wordpress",
+			title: "Wordpress CMS Developers",
+		},
+		{
+			path: "mobile",
+			title: "Mobile App Developers",
+		},
+	],
+	[
+		{
+			path: "ai-ml",
+			title: "AI and ML Engineers Deep Lerning/Machine Vision/NLP",
+		},
+		{
+			path: "data-science",
+			title: "Data Scientist / Data Engineers",
+		},
+		{
+			path: "managers",
+			title: "Project Managers",
+		},
+		{
+			path: "analysis",
+			title: "Business Analyst",
+		},
+		{
+			path: "info-scur",
+			title: "Information Scurity Engineers",
+		},
+	],
+	[
+		{
+			path: "security",
+			title: "Application Security Engineers",
+		},
+		{
+			path: "ios-android",
+			title: "IOS and Android Developers",
+		},
+		{
+			path: "solution",
+			title: "Solution Architects",
+		},
+		{
+			path: "team-lead",
+			title: "Tech Leads / Team Leads",
+		},
+		{
+			path: "go",
+			title: "Golang Dev",
+		},
+	],
+]
+
+export const HOME_TECH = [
+	{
+		path: "react-logo",
+		width: 213,
+		height: 71,
+	},
+	{
+		path: "angular-logo",
+		width: 232,
+		height: 57,
+	},
+	{
+		path: "next-logo",
+		width: 148,
+		height: 81,
+	},
+	{
+		path: "nodejs-logo",
+		width: 171,
+		height: 94,
+	},
+]
+
 export const HOME_START = [
 	{
 		icon: <Ask className="text-white"/>,

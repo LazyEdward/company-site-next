@@ -5,13 +5,15 @@
 
 "use client"
 
-import { DragEvent, PointerEvent, TouchEvent, UIEvent, useState, WheelEvent } from "react";
+import { PointerEvent, useState } from "react";
 
 export type TSwipeControl = {
 	minimalOffset?: number,
 	orientation: 'HORIZONTAL' | 'VERTICAL',
 	onPrev: () => void,
 	onNext: () => void,
+	showLeftButton?: boolean,
+	showRightButton?: boolean,
 }
 
 const Swipeable = ({
@@ -19,6 +21,8 @@ const Swipeable = ({
 	orientation,
 	onPrev,
 	onNext,
+	showLeftButton = false,
+	showRightButton = false,
 }: TSwipeControl) => {
 
 	const [startPos, setStartPos] = useState(-1);

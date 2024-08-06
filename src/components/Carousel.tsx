@@ -19,6 +19,7 @@ export type TCarouselControl = {
 
 export type TCarousel = {
 	className?: string,
+	duration?: number,
 	swipeable?: boolean;
 	children: ReactNode[],
 	control: ComponentType<TCarouselControl>;
@@ -26,6 +27,7 @@ export type TCarousel = {
 
 const Carousel = ({
 	className = "",
+	duration = 3000,
 	swipeable = true,
 	control: Control,
 	children
@@ -55,6 +57,9 @@ const Carousel = ({
 	}
 
 	useEffect(() => {
+		if(!duration)
+			return;
+
 		const transitionIntervral = setInterval(() => {
 			if(currentIndex + 1 >= Children.count(children)){
 				setCurrentIndex(0)
@@ -62,7 +67,7 @@ const Carousel = ({
 			}
 
 			setCurrentIndex(index => index + 1)
-		}, 3000)
+		}, duration)
 
     return () => {
       if (transitionIntervral) {
@@ -70,13 +75,13 @@ const Carousel = ({
       }
     };
 
-	}, [currentIndex, children])
+	}, [duration, currentIndex, children])
 
 	return (
 		<div className="relative w-full flex flex-col overflow-hidden ">
 			<div
-				className={`w-[calc(100%*3)] transition-transform ease-in-out duration-500 flex items-center ${className}`}
-				style={{"transform": `translateX(${getCarouselShift(currentIndex)}%)`}}
+				className={`transition-transform ease-in-out duration-500 flex items-center ${className}`}
+				style={{"width": `calc(100%*${Children.count(children)})`, "transform": `translateX(${getCarouselShift(currentIndex)}%)`}}
 			>
 				{children}
 			</div>

@@ -8,10 +8,11 @@ describe('Test TopBar Navigation', () => {
 		cy.visit('/')
 	})
 	
-	describe('Desktop', () => {
-		beforeEach(() => {
-			cy.viewport(1920, 1080)
-		})
+	describe('Desktop',
+		{
+			viewportWidth: 1920,
+			viewportHeight: 1080
+		}, () => {
 
 		it('Test TopBar Link exist', () => {
 			cy.get('[data-cy="header-nav-image"]').should('be.visible')
@@ -77,12 +78,13 @@ describe('Test TopBar Navigation', () => {
 
 	})
 	
-	describe('Mobile', () => {
-		beforeEach(() => {
-			cy.viewport(412, 893)
-		})
+	describe('Mobile',
+		{
+			viewportWidth: 412,
+			viewportHeight: 893
+		}, () => {
 
-		it('Test TopBar Link exist', () => {
+		it('Test TopBar Menu exist', () => {
 			cy.get('[data-cy="header-nav-image"]').should('be.visible')
 			cy.get('[data-cy="footer-nav-image"]').scrollIntoView().should('be.visible')
 
@@ -107,7 +109,7 @@ describe('Test TopBar Navigation', () => {
 			})
 		})
 
-		it('Test TopBar Link nav', () => {
+		it('Test TopBar Menu nav', () => {
 			cy.get('[role="menu"]').should('be.visible').click().then(() => {
 				cy.wait(500)
 				cy.get('[data-cy="mobile-links"]').children().contains('How to start').should('be.visible').click().then(() => {
