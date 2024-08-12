@@ -5,7 +5,7 @@
 
 import { FOOTER_LINKS, MEDIA_LINKS } from "@/constants/Links";
 import Image from "next/image";
-import NavLink from "./NavLink";
+import NavLink from "@/components/NavLink";
 import Phone from "@/icons/Phone";
 import Email from "@/icons/Email";
 import Map from "@/icons/Map";
@@ -13,7 +13,7 @@ import Map from "@/icons/Map";
 const Footer = () => {
   return (
     <main className="w-full flex flex-col">
-      <main className="w-full flex flex-col px-5 pt-[30px] lg:px-0 lg:flex-row lg:justify-around border-y-[1px] border-[#C4C4C4]">
+      <main className="w-full flex flex-col px-5 pt-[30px] lg:px-[10vw] lg:flex-row lg:justify-between border-y-[1px] border-[#C4C4C4]">
         <section className="flex flex-col gap-8 pb-8">
           <NavLink link="/">
             <Image data-cy="footer-nav-image" width={195} height={83} src="/logo.png" alt="Company Logo Footer"/>
@@ -89,7 +89,7 @@ Colombo 01`}
           </div>
         </section>
       </main>
-      <span className="truncate text-lg px-5 lg:px-16 py-8">
+      <span className="truncate text-lg px-5 lg:px-[10vw] py-8">
         © 2022 courtney
       </span>
     </main>

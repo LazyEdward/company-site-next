@@ -5,7 +5,7 @@
 
 "use client"
 
-import { TCarouselControl } from "./Carousel";
+import { TCarouselControl } from "@/components/Carousel";
 
 const ListBlockNav = ({
 	currentIndex,

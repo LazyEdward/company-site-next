@@ -7,7 +7,7 @@
 
 import { ComponentType } from "react"
 import { Children, ReactNode, useEffect, useState } from "react"
-import Swipeable, { TSwipeControl } from "./Swipeable";
+import Swipeable from "@/components/Swipeable";
 
 export type TCarouselControl = {
 	currentIndex: number,

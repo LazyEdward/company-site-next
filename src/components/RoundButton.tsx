@@ -15,7 +15,7 @@ export const ROUND_BUTTON_STYLE = {
 
 export type TRoundButton = {
 	disabled?: boolean,
-	placeholder?: string,
+	hoverText?: string,
 	children?: ReactNode,
 	className?: string,
 	onClick?: (e: MouseEvent<HTMLButtonElement> | TouchEvent<HTMLButtonElement>) => void
@@ -23,14 +23,14 @@ export type TRoundButton = {
 
 const RoundButton = ({
 	disabled = false,
-	placeholder = "",
+	hoverText = "",
 	children = "",
 	className = ROUND_BUTTON_STYLE.default,
 	onClick,
 }: TRoundButton) => (
 	<button
 		disabled={disabled}
-		title={placeholder}
+		title={hoverText}
 		className={`flex w-full truncate justify-center items-center rounded-lg cursor-pointer disabled:cursor-auto disabled:opacity-50 font-semibold select-none ${className}`}
 		onClick={disabled ? () => {} : onClick}
 	>

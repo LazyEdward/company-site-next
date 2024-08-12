@@ -6,7 +6,7 @@
 "use client"
 
 import ChveonLeft from "@/icons/ChveonLeft";
-import { TCarouselControl } from "./Carousel";
+import { TCarouselControl } from "@/components/Carousel";
 import ChveonRight from "@/icons/ChveonRight";
 
 const LeftRightNav = ({
