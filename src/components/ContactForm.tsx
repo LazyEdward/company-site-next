@@ -18,14 +18,14 @@ const ContactForm = () => {
 	const [acceptPolicy, setAcceptPolicy] = useState(false)
 
 	const handleSubmitForm = () => {
-		console.log(
-			company,
-			name,
-			phone,
-			email,
-			projectDetail,
-			acceptPolicy,
-		)
+		alert(`
+			company: ${company}
+			name: ${name}
+			phone: ${phone}
+			email: ${email}
+			projectDetail: ${projectDetail}
+			acceptPolicy: ${acceptPolicy}
+		`)
 	}
 
 	return (
@@ -38,7 +38,7 @@ Next Great Hire Today!`}
 			buttonStyle = "w-full lg:w-[310px]"
 			submitAction={handleSubmitForm}
 		>
-			<div className="w-full flex gap-8 flex-col">
+			<div data-cy="contact-form" className="w-full flex gap-8 flex-col">
 				<div className="w-full flex flex-col gap-8 lg:flex-row">
 					<div className="w-full lg:w-1/2">
 						<LabelInput
