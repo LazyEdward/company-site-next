@@ -11,6 +11,7 @@ import PageHeader from "@/components/PageHeader";
 import SectionHeader from "@/components/SectionHeader";
 import { HOW_TO_START_PROCESSES, HOW_TO_START_REASONS } from "@/constants/Texts";
 import Image from "next/image";
+import HowToStartImage from "../../../public/how-to-start-default.png"
 
 const GetStarted = () => {
   return (
@@ -70,7 +71,7 @@ Remote Developers`}
       <div className="h-[100px] lg:h-[138px]"></div>
       <section className="flex w-full lg:px-[10vw] h-[200px] lg:h-[447px] justify-center">
         <section className="relative w-full h-full flex justify-center items-center overflow-hidden rounded-bl-[100px] rounded-tr-[16px]">
-          <Image width={1507} height={447} className="object-cover w-full max-w-full min-h-full" src="/how-to-start-default.png" alt="How To Start"/>
+          <Image className="object-cover w-full max-w-full min-h-full" src={HowToStartImage} alt="How To Start"/>
           <div className="absolute top-0 left-0 w-full h-full text-white flex flex-col p-4">
             <span className="font-extralight text-[48px] lg:text-[96px]">1000+</span>
             <span className="font-semibold lg:text-[28px]">Developers</span>

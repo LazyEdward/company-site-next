@@ -8,6 +8,7 @@ import ListBlockNav from "@/components/ListBlockNav";
 import { HOME_EXPERTSES, HOME_SOLUTIONS, HOME_SPECIALIZED, HOME_START, HOME_TECH } from "@/constants/Texts";
 import ArrowForward from "@/icons/ArrowForward";
 import Image from "next/image";
+import HomeImage from "../../public/home.png"
 import ContactForm from "@/components/ContactForm";
 import TitleContentForm from "@/components/TitleContentForm";
 import ContactSection from "@/components/ContactSection";
@@ -18,7 +19,7 @@ const Home = () => (
     <section className="w-full flex justify-center items-center h-[216px] lg:h-[721px] lg:px-[10vw] overflow-x-auto">
       <section className="relative w-full h-full max-w-[1536px] flex justify-end items-center overflow-hidden">
         <div className="relative w-[999px] h-full flex justify-end max-w-full lg:max-w-[999px]">
-          <Image width={999} height={721} className="object-cover max-w-full lg:max-w-[999px] rounded-bl-[100px] " src="/home.png" alt="Page Default"/>
+          <Image className="object-cover max-w-full lg:max-w-[999px] rounded-bl-[100px] " src={HomeImage} alt="Page Default"/>
         </div>
         <div className="hidden lg:flex items-center absolute top-0 left-0 h-full">
           <TitleContentForm
@@ -151,9 +152,9 @@ Provide`}
         <div key={`specicalized-group-${index}`} className="w-1/4 flex flex-col gap-7">
           {group.map(item => (
             <IconTabBlock
-              key={item.title}
+              key={item.name}
               title={item.title}
-              imageIcon={`Specialized/${item.path}`}
+              imageIcon={item.src}
               className="w-full min-h-[93px]"
             />
           ))}
@@ -169,10 +170,10 @@ Provide`}
           <div key={`specicalized-group-mobile-${index}`} className="px-1 w-full items-center flex flex-col gap-7">
             {group.map(item => (
               <IconTabBlock
-                key={item.title}
+                key={item.name}
                 title={item.title}
                 iconContainerSize='w-[37px] h-[37px]'
-                imageIcon={`Specialized/${item.path}`}
+                imageIcon={item.src}
                 className="w-full max-w-[700px] min-h-[72px]"
               />
             ))}
@@ -188,8 +189,8 @@ Provide`}
     />
     <section className="hidden xl:flex px-[10vw] gap-8 justify-between">
       {HOME_TECH.map(item => (
-        <div key={item.path} className={`flex shrink-0 justify-center items-center w-[240px] h-[95px]`}>
-          <Image width={item.width} height={item.height} className="m-1 flex-1" src={`/${item.path}.png`} alt={item.path}/>
+        <div key={item.name} className={`flex shrink-0 justify-center items-center w-[240px] h-[95px]`}>
+          <Image className="m-1 flex-1" src={item.src} alt={item.name}/>
         </div>
       ))}
     </section>
@@ -200,9 +201,9 @@ Provide`}
         control={LeftRightNav}
       >
         {HOME_TECH.map(item => (
-          <div key={item.path} className={`w-full flex justify-center items-center px-4 h-[100px]`}>
+          <div key={item.name} className={`w-full flex justify-center items-center px-4 h-[100px]`}>
             <div className={`w-[calc(100%-80px)] flex justify-center items-center `}>
-              <Image width={item.width} height={item.height} className="m-1" src={`/${item.path}.png`} alt={item.path}/>
+              <Image className="m-1" src={item.src} alt={item.name}/>
             </div>
           </div>
         ))}
@@ -216,8 +217,8 @@ Provide`}
     />
     <section className="hidden xl:flex px-[10vw] gap-8 justify-between">
       {HOME_TECH.map(item => (
-        <div key={item.path} className={`flex shrink-0 justify-center items-center w-[240px] h-[95px]`}>
-          <Image width={item.width} height={item.height} className="m-1 flex-1" src={`/${item.path}.png`} alt={item.path}/>
+        <div key={item.name} className={`flex shrink-0 justify-center items-center w-[240px] h-[95px]`}>
+          <Image className="m-1 flex-1" src={item.src} alt={item.name}/>
         </div>
       ))}
     </section>
@@ -228,9 +229,9 @@ Provide`}
         control={LeftRightNav}
       >
         {HOME_TECH.map(item => (
-          <div key={item.path} className={`w-full flex justify-center items-center px-4 h-[100px]`}>
+          <div key={item.name} className={`w-full flex justify-center items-center px-4 h-[100px]`}>
             <div className={`w-[calc(100%-80px)] flex justify-center items-center `}>
-              <Image width={item.width} height={item.height} className="m-1" src={`/${item.path}.png`} alt={item.path}/>
+              <Image className="m-1" src={item.src} alt={item.name}/>
             </div>
           </div>
         ))}

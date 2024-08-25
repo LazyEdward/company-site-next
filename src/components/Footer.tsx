@@ -9,6 +9,7 @@ import NavLink from "@/components/NavLink";
 import Phone from "@/icons/Phone";
 import Email from "@/icons/Email";
 import Map from "@/icons/Map";
+import LogoImage from "../../public/logo.png"
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
       <main className="w-full flex flex-col px-5 pt-[30px] lg:px-[10vw] lg:flex-row lg:justify-between border-y-[1px] border-[#C4C4C4]">
         <section className="flex flex-col gap-8 pb-8">
           <NavLink link="/">
-            <Image data-cy="footer-nav-image" width={195} height={83} src="/logo.png" alt="Company Logo Footer"/>
+            <Image data-cy="footer-nav-image" src={LogoImage} alt="Company Logo Footer"/>
           </NavLink>
           <span className=" whitespace-pre-wrap">
             {`Expertly trained, battle-tested, elite

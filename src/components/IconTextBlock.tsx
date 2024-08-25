@@ -3,10 +3,10 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 
 export type TIconTextBlock = {
-	imageIcon: string,
+	imageIcon: string | StaticImageData,
 	title: string,
 	content: string,
 	iconContainerSize?: string,
@@ -37,7 +37,11 @@ const IconTextBlock = ({
 	return (
 		<div className={`flex ${getIconLayout(iconPosition)} gap-5 ${className}`}>
 			<div className={`bg-pale-yellow rounded-xl flex shrink-0 justify-center items-center ${iconContainerSize}`}>
-				<Image width={80} height={80} className="m-1 flex-1" src={`/${imageIcon}.png`} alt={imageIcon}/>
+			{typeof imageIcon === "string" ?
+					<Image width={80} height={80} className="m-1 flex-1" src={`/${imageIcon}.png`} alt={title}/>
+				:
+					<Image className="m-1 flex-1" src={imageIcon} alt={title}/>
+			}
 			</div>
 			<div className="flex flex-col gap-5">
 				<span className="text-[28px] font-semibold">{title}</span>

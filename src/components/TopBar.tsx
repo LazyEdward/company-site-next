@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import Modal from "@/components/Modal";
 import Close from "@/icons/Close";
 import { usePathname } from "next/navigation";
+import LogoImage from "../../public/logo.png"
 
 const TopBar = () => {
   const currentPath = usePathname();
@@ -27,7 +28,7 @@ const TopBar = () => {
   return (
     <main className="w-full px-[10vw] py-[1px] h-[81px] xl:h-[93px] flex justify-between items-center">
       <NavLink link="/">
-        <Image data-cy="header-nav-image" width={141} height={59} className="w-[141px] h-[59px] xl:w-[195px] xl:h-[83px]" src="/logo.png" alt="Company Logo Top"/>
+        <Image data-cy="header-nav-image" className="w-[141px] h-[59px] xl:w-[195px] xl:h-[83px]" src={LogoImage} alt="Company Logo Top"/>
       </NavLink>
       <Menu className="block xl:hidden cursor-pointer" onClick={() => setShowMobileNavLinks(true)}/>
       <div data-cy="desktop-links" className="hidden xl:flex justify-between gap-6">

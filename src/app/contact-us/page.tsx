@@ -6,6 +6,7 @@
 import ContactSection from "@/components/ContactSection";
 import PageHeader from "@/components/PageHeader";
 import SectionHeader from "@/components/SectionHeader";
+import MapImage from "../../../public/map.png"
 
 const ContactUs = () => {
   return (
@@ -19,7 +20,7 @@ whatsapp, email, submit a contact form). We will be glad to answer your
 questions as soon as possible.`}
       />
       <div className="h-[50px] lg:h-[100px]"></div>
-      <ContactSection imgSrc="map.png"/>
+      <ContactSection imgSrc={MapImage}/>
       <div className="h-[93px] lg:h-[100px]"></div>
     </main>
   );

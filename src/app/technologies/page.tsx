@@ -6,6 +6,7 @@
 import ContactSection from "@/components/ContactSection";
 import PageHeader from "@/components/PageHeader";
 import SectionHeader from "@/components/SectionHeader";
+import TechnologiesSection from "@/components/TechnologiesSection";
 
 const Technologies = () => {
   return (
@@ -18,6 +19,8 @@ const Technologies = () => {
 mantra. We are agile about learning new processes
 and tools to save time and reduce complexity`}
       />
+      <div className="h-[50px] lg:h-[100px]"></div>
+      <TechnologiesSection/>
       <div className="h-[50px] lg:h-[100px]"></div>
       <ContactSection/>
       <div className="h-[93px] lg:h-[100px]"></div>
