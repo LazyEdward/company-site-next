@@ -99,6 +99,8 @@ export const PAGE_HEADERS = {
 	},
 } as const
 
+export type TPageHeader = keyof typeof PAGE_HEADERS
+
 export const HOME_SOLUTIONS = [
 	{
 		path: "architect",
@@ -595,6 +597,91 @@ export const TECHNOLOGY_LIST_OPTIONS: (keyof typeof TECHNOLOGY_CATEGORY)[] = [
 	"cms",
 	"ec",
 	"security",
-]
+] as const
 
-export type TPageHeader = keyof typeof PAGE_HEADERS
+export const CAREER_HEADER = {
+	"role": "ROLE",
+	"skills": "SKILLS",
+	"location": "LOCATION",
+} as const
+
+export const CAREER_SKILLS = {
+	"node": "Node.js",
+	"react": "React js",
+	"vue": "Vue js",
+	"typescript": "Typescript",
+	"javascript": "Javascript",
+	"next": "Next js",
+	"amplify": "Amplify",
+	"aws": "AWS",
+	"terraform": "Terraform",
+	"c-sharp": " C# and .NET",
+	"graph-ql": "GraphQL",
+	"serverless": "Serverless Framework",
+} as const
+
+export type TCareerRole = {
+	title: string,
+	content: string,
+}
+
+export type TCareerSkill = keyof typeof CAREER_SKILLS
+
+export type TCareerLocation = {
+	city: string,
+	country?: string
+}
+
+export type TCareer = {
+	role: TCareerRole
+	skills: TCareerSkill[]
+	locations: TCareerLocation[]
+}
+
+export const CAREER_DATA = [
+	{
+		"role": {
+			"title": "Senior Web Full Stack Developer",
+			"content": `Seniority in development is not just about how much time you have already spent behind the computer screen. It's the way you think, how you approach problems and their solutions, the responsibility you take on and feel.`,
+		},
+		"skills": [
+			"node",
+			"react",
+			"vue",
+			"typescript",
+			"javascript",
+			"next",
+			"amplify",
+			"aws",
+			"terraform",
+			"c-sharp",
+			"graph-ql",
+			"serverless",
+		],
+		"locations": [
+			{
+				"city": "Remote",
+			},
+			{
+				"city": "Ostrava",
+				"country": "Czech Republic",
+			},
+			{
+				"city": "Brno",
+				"country": "Czech Republic",
+			},
+			{
+				"city": "Barcelona",
+				"country": "Spain",
+			},
+			{
+				"city": "Prague",
+				"country": "Czech Republic",
+			},
+			{
+				"city": "Zlín",
+				"country": "Czech Republic",
+			},
+		],
+	}
+] as const satisfies TCareer[]
